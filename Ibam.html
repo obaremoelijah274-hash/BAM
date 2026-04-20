@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REFLEX — Neural Speed Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="game-wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="game-title">REFLEX</div>
+    <div class="game-subtitle">Neural Speed Test — BAM Hackathon Edition</div>
+  </div>
+
+  <!-- STATS ROW -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-label">Score</div>
+      <div class="stat-value" id="score-display">0</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Best (ms)</div>
+      <div class="stat-value gold" id="best-display">—</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Lives</div>
+      <div class="stat-value danger" id="lives-display">♥ ♥ ♥</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Avg (ms)</div>
+      <div class="stat-value" id="avg-display">—</div>
+    </div>
+  </div>
+
+  <!-- LEVEL ROW -->
+  <div class="level-row">
+    <span class="level-badge" id="level-badge">LVL 1</span>
+    <div class="xp-bar-wrap">
+      <div class="xp-bar-fill" id="xp-bar" style="width:0%"></div>
+    </div>
+    <span id="level-name">RECRUIT</span>
+  </div>
+
+  <!-- ROUND PIPS -->
+  <div class="round-track" id="round-track"></div>
+
+  <!-- MAIN ARENA -->
+  <div class="arena state-wait" id="arena">
+    <!-- Combo display -->
+    <div class="combo-display" id="combo-display">
+      <div class="combo-num" id="combo-num">x3</div>
+      <div class="combo-label">COMBO</div>
+    </div>
+
+    <!-- Message area -->
+    <div class="arena-message" id="arena-msg" style="color:rgba(0,255,200,0.8);">READY?</div>
+    <div class="arena-sub" id="arena-sub">Tap START to begin</div>
+  </div>
+
+  <!-- GHOST OPPONENT BAR -->
+  <div class="ghost-bar" id="ghost-bar" style="display:none">
+    <div>
+      <div class="ghost-label">Ghost Opponent</div>
+      <div class="ghost-name" id="ghost-name">---</div>
+    </div>
+    <div style="text-align:right">
+      <div class="ghost-time" id="ghost-time">---ms</div>
+      <div class="ghost-status" id="ghost-status">waiting</div>
+    </div>
+  </div>
+
+  <!-- REACTION HISTORY -->
+  <div class="history-row" id="history-row"></div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <button class="btn btn-start" id="start-btn" onclick="handleStart()">▶ START</button>
+    <button class="btn btn-reset" id="reset-btn" onclick="handleReset()">↺ RESET</button>
+  </div>
+
+  <!-- INSTRUCTIONS -->
+  <div class="instructions">
+    Wait for the green flash → tap as fast as possible &nbsp;|&nbsp;
+    Tapping early loses a life &nbsp;|&nbsp; Combos multiply your score
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+8
